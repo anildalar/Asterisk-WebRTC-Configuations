@@ -1,0 +1,12 @@
+chown asterisk. /etc/asterisk/pjsip.conf 
+chown asterisk. /etc/asterisk/extensions.conf
+asterisk -rvvvvvvvvvv
+module reload res_pjsip.so
+dialplan reload
+module reload http
+
+
+cd /var/www/html/
+yum install git
+git clone https://github.com/InnovateAsterisk/Browser-Phone.git
+chown -R apache:apache /var/www/html/Browser-Phone
